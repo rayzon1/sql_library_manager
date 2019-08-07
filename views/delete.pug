@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1= "Are you sure you want to delete?"
+    form(action='/books/' + books.id + "?_method=DELETE", method="post")
+      p
+        input(type='submit', value='Delete Book')
+        a.button(href='../') Cancel
+    

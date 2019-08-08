@@ -1,0 +1,6 @@
+if(errors)
+  h2(class="error").errors Ooops an error occured!
+  ul(class="error").errors
+    each error in errors
+      li(class="error")
+        =error.message

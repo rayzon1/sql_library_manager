@@ -1,23 +1,28 @@
 extends layout
 
 block content
-  body
-    h1 Books
-    p
-      a.button(href='/books/new') Create New Book
-    table
-      thead
-        tr
-          th Title
-          th Author
-          th Genre
-          th Year
-      tbody
-        each book in books
-          tr
-            td
-              a(href='/books/' + book.id)= book.title
-            td= book.author
-            td= book.genre
-            td= book.year
+  h1 Gerardo's Library Database
+  p
+    a.button(href='/books/new') Create New Book
+  br
+  label(for='search') Search
+    input(name='search', type='text', placeholder="Type to search")#searchBar
+  br
+  br
+  table
+    thead
+      tr
+        th Title
+        th Author
+        th Genre
+        th Year
+    tbody
+      each book in books
+        tr(class="tdata")
+          td
+            a(href='/books/' + book.id)= book.title
+          td= book.author
+          td= book.genre
+          td= book.year
+  div#paginationContainer
         

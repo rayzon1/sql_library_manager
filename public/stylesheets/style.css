@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 body {
   padding: 10px 50px 50px;
-  font: 18px "Garamond", serif;
+  font: 18px "Roboto", serif;
 }
 
 a {
@@ -94,4 +96,25 @@ input[type=text] {
 
 .error {
   color: rgb(236, 15, 15);
+}
+
+.listContainer {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.listItem {
+  margin: 12px;
+}
+
+.buttonPage {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(0, 177, 137, 0.8);
+  border-radius: 5px;
+}
+
+.buttonPage:focus {
+  outline: none;
 }

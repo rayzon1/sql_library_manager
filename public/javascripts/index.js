@@ -1,3 +1,4 @@
+
 const search = document.getElementById("searchBar");
 const pageDiv = document.getElementById("paginationContainer");
 const pageButtons = document.getElementsByClassName("buttonPage");
@@ -15,6 +16,7 @@ search.addEventListener("keyup", e => {
       : (val.style.display = "none");
   });
 });
+
 
 /**
  * Function to create elements.
@@ -63,8 +65,16 @@ for (let i = 1; i <= pageNumbers; i++) {
 [...pageButtons].forEach(val => {
   val.addEventListener("click", e => {
     showPage(tableList, e.target.innerText);
+    [...pageButtons].forEach(val => {
+      if (val.style.border) {
+        val.style.border = "";
+      }
+    })
+    e.target.style.border = "2px solid rgba(0, 177, 137, 0.8)";
   });
 });
 
+
+[...pageButtons][0].style.border = "2px solid rgba(0, 177, 137, 0.8)";
 showPage(tableList, 1);
 

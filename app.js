@@ -6,7 +6,6 @@ var logger = require('morgan');
 var methodOverride = require('method-override')
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var allBooksRouter = require('./routes/allBooks');
 
 var app = express();
@@ -35,8 +34,6 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-  // render the error page
-  // res.status(err.status || 500);
   if(err.status === 404){
     res.render('page-not-found')
   } else {
